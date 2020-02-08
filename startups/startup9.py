@@ -5,5 +5,6 @@ import RPi.GPIO as GPIO
 
 GPIO.setwarnings(False)
 comp.setup()
-comp.startup2b2()
+comp.startup9()
+
 

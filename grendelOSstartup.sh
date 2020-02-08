@@ -15,8 +15,8 @@ echo ""
 
 openAll    #uncomment if you want to use this to start hardware and software.
 
-#echo "!+!+!		System pause while computers bootload and start services "
-#sleep 2m
+echo "!+!+!		System pause while computers bootload and start services "
+sleep 1m
 echo "!+!+!		Hardware setup should be complete "
 
 echo "!*!*! !!!!! Would you like to upgrade all system software? [Y,n]"
@@ -25,7 +25,7 @@ if [[ $input == "Y" || $input == "y" ]]; then
         echo "!+!+!		Starting software setup "
         echo "!+!+!		Starting software upgrades on all computers"
         upgradeAll
-        echo"!+!+!		Finished sofwared upgrades"
+        echo"!+!+!		Finished sofwar#ed upgrades"
 else
         echo "!*!*!    Proceeding with boot routine. "
 	sleep 1m
@@ -35,9 +35,9 @@ fi
 
 echo "!+!+!		Starting NFS servers "
 
-ssh pi@192.168.0.102 sudo startNFSserver
+#ssh pi@192.168.0.102 sudo startNFSserver
 ssh pi@192.168.0.103 sudo startNFSserver
-#ssh pi@192.168.0.104 sudo startNFSserver
+ssh pi@192.168.0.104 sudo startNFSserver
 
 echo "!+!+!		Finished all NFS server starts "
 
@@ -50,9 +50,9 @@ echo "!+!+!		Mounting NFS disks on all system computers "
 ssh pi@192.168.0.101 mountAllDisks
 ssh pi@192.168.0.102 mountAllDisks
 ssh pi@192.168.0.103 mountAllDisks
-ssh pi@192.168.0.104 ./Desktop/mountAllDisks
+ssh pi@192.168.0.104 mountAllDisks
 ssh pi@192.168.0.105 mountAllDisks
-#ssh pi@192.168.0.110 mountAllDisks
+ssh pi@192.168.0.106 mountAllDisks
 mountAllDisks
 echo "!*!*!		 All Drives mounted "
 #start jupyter notebooks and ipyparallel ( not written yet)
@@ -69,6 +69,3 @@ echo "!*!*!*!*!*!                    Please enjoy your time here                
 echo "!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!"
 echo ""
 echo ""
-
- 
-

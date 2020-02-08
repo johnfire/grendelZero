@@ -5,5 +5,5 @@ import RPi.GPIO as GPIO
 
 GPIO.setwarnings(False)
 comp.setup()
-comp.startup2b3()
+comp.startup22()
 
